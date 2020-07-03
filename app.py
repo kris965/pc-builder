@@ -1,11 +1,21 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import flask_pymongo
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
 
+app = Flask(__name__)
+app.config["MONGO_DBNAME"] = "pcbuilder"
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+
+mongo = PyMongo(app)
+
+
 @app.route('/')
-def hello():
+@app.route('/get_task')
+def get_tasks():
     return "Hello world ...again"
 
 
