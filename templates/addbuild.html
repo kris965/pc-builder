@@ -1,0 +1,14 @@
+{% extends 'base.html'%} {% block content %}
+{% for build in build %}
+    {{build.build_name}}
+    {{build.motherboard}}
+    {{build.processor}}
+    {{build.processor_cooler}}
+    {{build.memory}}
+    {{build.graphics_card}}
+    {{build.hard_drive}}
+    {{build.power_supply}}
+    {{build.case}}
+    {% endfor %}
+
+{% endblock %} 
