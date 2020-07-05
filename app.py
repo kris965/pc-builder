@@ -3,8 +3,10 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId 
 
-app = Flask(__name__)
+from os import path
 
+if path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "pcbuilder"
@@ -14,9 +16,9 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/get_task')
-def get_tasks():
-    return "Hello world ...again"
+@app.route('/get_build')
+def get_build():
+    return render_template("addbuild.html", build=mongo.db.build.find())
 
 
 if __name__ == '__main__':
