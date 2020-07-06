@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+html{
+    font-family: 'Teko', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .slider .indicators .indicator-item.active {
+    background-color: #e53935; 
+}

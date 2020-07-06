@@ -20,7 +20,7 @@
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
                 <li><a href="templates/addbuild.html"><i class="material-icons left">apps</i>View all buils</a></li>
-					<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Search build by:<i class="material-icons right">arrow_drop_down</i></a></li>
+					<li><a href="templates/addbuild.html"><i class="material-icons left">search</i>Search for a build</a></li>
 					<li><a href="templates/searchbuild.html"><i class="material-icons left">add</i>Add a build</a></li>
 				</ul>
 			</div>
@@ -30,43 +30,16 @@
 		<li><a href=""><i class="material-icons left">search</i>Search for a build</a></li>
 		<li><a href=""><i class="material-icons left">add</i>Add a build</a></li>
 	</ul>
-
-	<div class="slider fullscreen">
-		<ul class="slides">
-			<li>
-				<img src="/static/img/pcbg.jpg" alt="pc">
-				<div class="caption center-align">
-					<h3>Welcome to PC BUILDER</h3>
-					<h5 class="light grey-text text-lighten-3">The custom pc builder</h5>
-				</div>
-			</li>
-			<li>
-				<img src="/static/img/gamepc.jpg" alt="pc">
-				<div class="caption center-align">
-					<h3>Check out our builds!</h3>
-					<a class="red darken-1 waves-effect waves-light btn">View all builds</a>
-				</div>
-			</li>
-			<li>
-				<img src="/static/img/gamepc2.jpg" alt="pc">
-				<div class="caption center-align">
-					<h3>Want to create your own build?</h3>
-					<h5 class="light grey-text text-lighten-3">Click here to get started!</h5>
-					<a class=" red darken-1 waves-effect waves-light btn">Add your build</a>
-				</div>
-			</li>
-			<li>
-				<img src="/static/img/gamepc3.jpg" alt="pc">
-				<div class="caption center-align">
-					<h3>Are you looking for a specific build?</h3>
-					<h5 class="light grey-text text-lighten-3">Click here to get started</h5>
-					<a class=" red darken-1 waves-effect waves-light btn">Search</a>
-				</div>
-			</li>
-		</ul>
-	</div>
-
-
+    <div class="container">
+    <h3>Looking for a specific build<h3>
+    <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+      </div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{{ url_for('static', filename='js/pcbuilder.js') }}"></script>
