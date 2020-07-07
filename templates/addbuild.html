@@ -34,27 +34,84 @@
     <h3> Create your build <h3>
 <div class="row">
     <form class="col s12">
+    <h5>Name<h5>
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+          <input placeholder="Enter the name of your build" id="name" type="text" class="validate">
         </div>
-        <div class="input-field col s12">
+        <div class="input-field col l12 s6">
+        <h5>Motherboard</h5>
     <select>
-      <optgroup label="team 1">
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-      </optgroup>
-      <optgroup label="team 2">
-        <option value="3">Option 3</option>
-        <option value="4">Option 4</option>
-      </optgroup>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
     </select>
-    <label>Optgroups</label>
   </div>
-    </form>
+  <div class="input-field col l12 s6">
+        <h5>Processor</h5>
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
   </div>
-  <div class="container">
+  <div class="input-field col l12 s6">
+        <h5>Processor Cooler</h5>
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+  <div class="input-field col l12 s6">
+        <h5>Memory</h5>
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+  <div class="input-field col l12 s6">
+        <h5>Graphics Card</h5>
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+  <div class="input-field col l12 s6">
+        <h5>Hard Drive</h5>
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+  <div class="input-field col l12 s6">
+        <h5>Power Supply</h5>
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+  <div class="input-field col l12 s6">
+        <h5>Case</h5>
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+  </div>
+  </div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{{ url_for('static', filename='js/pcbuilder.js') }}"></script>
