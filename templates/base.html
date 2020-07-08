@@ -9,29 +9,55 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
-	<title>Title</title>
+	<title>{% block title %} {% endblock %}</title>
 </head>
 
 <body>
+	
 	<div class="navbar-fixed">
+    <ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Motherboard</a></li>
+  <li><a href="#!">Processor</a></li>
+  <li><a href="#!">Processor Cooler</a></li>
+  <li><a href="#!">Memory</a></li>
+  <li><a href="#!">Graphics Card</a></li>
+  <li><a href="#!">Hard Drive</a></li>
+  <li><a href="#!">Power Supply</a></li>
+  <li><a href="#!">Case</a></li>
+  
+</ul>
 		<nav class="red darken-4">
 			<div class="nav-wrapper">
 				<a href="index.html" class="brand-logo center ">PC BUILDER</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
-                <li><a href="templates/addbuild.html"><i class="material-icons left">home</i>Home</a></li>
                 <li><a href="templates/addbuild.html"><i class="material-icons left">apps</i>View all buils</a></li>
-				<li><a href="templates/searchbuild.html"><i class="material-icons left">add</i>Add a build</a></li>
+					<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Search build by:<i class="material-icons left">arrow_drop_down</i></a></li>
+					<li><a href="templates/searchbuild.html"><i class="material-icons left">add</i>Add a build</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
-	<ul class="sidenav" id="mobile-demo">
-		<li><a href="templates/addbuild.html"><i class="material-icons left">home</i>Home</a></li>
+	<ul class="sidenav collapsible" id="mobile-demo">
         <li><a href="templates/addbuild.html"><i class="material-icons left">apps</i>View all buils</a></li>
+		<li>
+      <div class="collapsible-header"><i class="material-icons left">search</i>Search build by</div>
+      <div class="collapsible-body"><span><a href="#!">Motherboard</a></span></div>
+      <div class="collapsible-body"><span><a href="#!">Processor</a></span></div>
+      <div class="collapsible-body"><span><a href="#!">Processor Cooler</a></span></div>
+      <div class="collapsible-body"><span><a href="#!">Graphics Card</a></span></div>
+      <div class="collapsible-body"><span><a href="#!">Memory</a></span></div>
+      <div class="collapsible-body"><span><a href="#!">Hard Drive</a></span></div>
+      <div class="collapsible-body"><span><a href="#!">Power Supply</a></span></div>
+      <div class="collapsible-body"><span><a href="#!">Case</a></span></div>
+    </li>
 		<li><a href=""><i class="material-icons left">add</i>Add a build</a></li>
 	</ul>
-
+    {% block content %}{% endblock %}
+    {% block addbuild %} {% endblock %}
+    {% block allbuilds %} {% endblock %}
+    {% block home %} {% endblock %}
+    {% block index %} {% endblock %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{{ url_for('static', filename='js/pcbuilder.js') }}"></script>
