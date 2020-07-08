@@ -17,7 +17,33 @@ main {
 .slider .indicators .indicator-item.active {
   background-color: #e53935;
 }
-/* changes navbar items font size */
+/* Navbar/Sidenav*/
+
+.collapsible-header i {
+    margin: 0 27px 0 0;
+}
+
+.sidenav li > a {
+  font-size: 2rem;
+}
+
+.sidenav .collapsible-header,
+.sidenav.fixed .collapsible-header {
+  font-size: 2rem;
+  padding: 0 32px;
+}
+/* changes color collapsible menu items */
+.collapsible-body a {
+  color: rgba(0, 0, 0, 0.87);
+}
+.sidenav li > :hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+/* changes font size collapsible menu items */
+.sidenav .collapsible-body {
+  padding-left: 4rem;
+  font-size: 1.5rem
+}
 
 nav ul a {
   font-size: 1.5rem;
@@ -30,11 +56,10 @@ nav .brand-logo {
 .head-text {
   font-size: 3.5rem;
 }
-/* MAKE MORE SPECIFIC!!!!!*/
+
 .sub-text {
   font-size: 2rem;
 }
-
 
 /* buttons*/
 
@@ -44,8 +69,10 @@ nav .brand-logo {
 .btn-large {
   font-size: 1.5rem;
 }
-.btn:hover, .btn-large:hover, .btn-small:hover {
-    background-color: #d50000;
+.btn:hover,
+.btn-large:hover,
+.btn-small:hover {
+  background-color: #d50000;
 }
 
 /*forms*/
@@ -60,15 +87,14 @@ nav .brand-logo {
 
 /*cards*/
 .card .card-title {
-    font-size: 2.5rem;
-    
+  font-size: 2.5rem;
 }
-.card{
-    height: 15rem;
+.card {
+  height: 15rem;
 }
-.part-name{
-    font-size: 1.8rem;
+.part-name {
+  font-size: 1.8rem;
 }
-.part-description{
-    font-size: 1.2rem;
+.part-description {
+  font-size: 1.2rem;
 }
