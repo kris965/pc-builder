@@ -16,9 +16,10 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-@app.route('/get_build')
-def get_build():
-    return render_template("index.html", build=mongo.db.build.find())
+@app.route('/add_build')
+def add_build():
+    return render_template("addbuild.html",
+                           motherboard=mongo.db.motherboard.find())
 
 
 if __name__ == '__main__':
