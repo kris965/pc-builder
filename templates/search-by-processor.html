@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/824b0093a0.js" crossorigin="anonymous"></script>
-	<title>Title</title>
-</head>
-
-<body>
-	<div class="navbar-fixed">
-		<nav class="red darken-4">
-			<div class="nav-wrapper">
-				<a href="index.html" class="brand-logo center ">PC BUILDER</a>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-                <li><a href="templates/addbuild.html"><i class="material-icons left">apps</i>View all buils</a></li>
-					<li><a href="templates/addbuild.html"><i class="material-icons left">search</i>Search for a build</a></li>
-					<li><a href="templates/searchbuild.html"><i class="material-icons left">add</i>Add a build</a></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-	<ul class="sidenav" id="mobile-demo">
-		<li><a href=""><i class="material-icons left">search</i>Search for a build</a></li>
-		<li><a href=""><i class="material-icons left">add</i>Add a build</a></li>
-	</ul>
+{% extends "base.html" %}
+{% block title %}Seach by Case{% endblock %} 
+{% block searchprocessor %}
     <div class="container">
     <h3>Search build by Processor</h3>
     <div class="input-field col l12 s6">
@@ -42,9 +12,4 @@
     </select>
   </div>
       </div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script src="{{ url_for('static', filename='js/pcbuilder.js') }}"></script>
-</body>
-
-</html>
+{% endblock %}
