@@ -13,6 +13,7 @@ body {
 main {
   flex: 1 0 auto;
 }
+/* slider */
 
 .slider .indicators .indicator-item.active {
   background-color: #e53935;
