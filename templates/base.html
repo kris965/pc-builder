@@ -55,9 +55,19 @@
 	</ul>
     {% block content %}{% endblock %}
     {% block addbuild %} {% endblock %}
+    {% block editbuild %} {% endblock %}
     {% block allbuilds %} {% endblock %}
     {% block home %} {% endblock %}
     {% block index %} {% endblock %}
+    {% block searchcase %} {% endblock %}
+    {% block searchgraphics %} {% endblock %}
+    {% block searchharddrive %} {% endblock %}
+    {% block searchmemory %} {% endblock %}
+    {% block searchmotherboard %} {% endblock %}
+    {% block searchname %} {% endblock %}
+    {% block searchpowersupply %} {% endblock %}
+    {% block searchprocessor %} {% endblock %}
+    {% block searchprocessorcooler %} {% endblock %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{{ url_for('static', filename='js/pcbuilder.js') }}"></script>
