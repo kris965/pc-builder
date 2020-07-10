@@ -16,10 +16,32 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
+@app.route('/all_builds')
+def all_builds():
+    return render_template("allbuilds.html", build=mongo.db.build.find())
+
+# Add build form
+
+
 @app.route('/add_build')
 def add_build():
-    return render_template("addbuild.html",
-                           motherboard=mongo.db.motherboard.find())
+    build_name = mongo.db.build_name.find()
+    motherboard = mongo.db.motherboard.find()
+    processor = mongo.db.processor.find()
+    processorcooler = mongo.db.processorcooler.find()
+    memory = mongo.db.memory.find()
+    graphicscard = mongo.db.graphicscard.find()
+    harddrive = mongo.db.harddrive.find()
+    powersupply = mongo.db.powersupply.find()
+    case = mongo.db.case.find()
+    return render_template('/addbuild.html', motherboard=motherboard, processor=processor, processorcooler=processorcooler, memory=memory, graphicscard=graphicscard, harddrive=harddrive, powersupply=powersupply, case=case, build_name=build_name)
+
+
+@app.route('/insert_build', methods=['POST'])
+def insert_build():
+    build = mongo.db.build
+    build.insert_one(request.form.to_dict())
+    return redirect(url_for('all_builds'))
 
 
 if __name__ == '__main__':

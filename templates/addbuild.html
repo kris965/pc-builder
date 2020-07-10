@@ -3,7 +3,7 @@ content %} {% endblock %} {% block addbuild %}
 <div class="container">
   <h3>Create your build</h3>
   <div class="row">
-    <form class="col s12">
+    <form action="{{ url_for('insert_build') }}" method="POST"  class="col s12">
       <h5>Name</h5>
       <div class="row">
         <div class="input-field col s12">
@@ -12,9 +12,10 @@ content %} {% endblock %} {% block addbuild %}
             id="name"
             type="text"
             class="validate"
+            required
           />
         </div>
-        <div class="input-field col l12 s6">
+        <div class="input-field col s12">
           <h5>Motherboard</h5>
           <select id="motherboard" name="motherboard">
             <option value="" disabled selected>Select Motherboard</option>
@@ -23,7 +24,7 @@ content %} {% endblock %} {% block addbuild %}
             {% endfor %}
           </select>
         </div>
-        <div class="input-field col l12 s6">
+        <div class="input-field col s12">
           <h5>Processor</h5>
           <select id="processor" name="processor">
             <option value="" disabled selected>Select Processor</option>
@@ -32,65 +33,67 @@ content %} {% endblock %} {% block addbuild %}
             {% endfor %}
           </select>
         </div>
-        <div class="input-field col l12 s6">
-          <h5>Motherboard</h5>
-          <select id="motherboard" name="motherboard">
-            <option value="" disabled selected>Select Motherboard</option>
-            {% for motherboard in motherboard %}
-            <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
+        <div class="input-field col s12">
+          <h5>Processor Cooler</h5>
+          <select id="processorcooler" name="processorcooler">
+            <option value="" disabled selected>Select Processor Cooler</option>
+            {% for processorcooler in processorcooler %}
+            <option value="{{processorcooler.processorcooler}}">{{processorcooler.processor_cooler}}</option>
             {% endfor %}
           </select>
         </div>
-        <div class="input-field col l12 s6">
-          <h5>Motherboard</h5>
-          <select id="motherboard" name="motherboard">
-            <option value="" disabled selected>Select Motherboard</option>
-            {% for motherboard in motherboard %}
-            <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
+        <div class="input-field col s12">
+          <h5>Memory</h5>
+          <select id="memory" name="memory">
+            <option value="" disabled selected>Memory</option>
+            {% for memory in memory %}
+            <option value="{{memory.memory}}">{{memory.memory}}</option>
             {% endfor %}
           </select>
         </div>
-        <div class="input-field col l12 s6">
-          <h5>Motherboard</h5>
-          <select id="motherboard" name="motherboard">
-            <option value="" disabled selected>Select Motherboard</option>
-            {% for motherboard in motherboard %}
-            <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
+        <div class="input-field col s12">
+          <h5>Graphics Card</h5>
+          <select id="graphicscard" name="graphicscard">
+            <option value="" disabled selected>Select Graphics Card</option>
+            {% for graphicscard in graphicscard %}
+            <option value="{{graphicscard.graphicscard}}">{{graphicscard.graphics_card}}</option>
             {% endfor %}
           </select>
         </div>
-        <div class="input-field col l12 s6">
-          <h5>Motherboard</h5>
-          <select id="motherboard" name="motherboard">
-            <option value="" disabled selected>Select Motherboard</option>
-            {% for motherboard in motherboard %}
-            <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
+        <div class="input-field col s12">
+          <h5>Hard Drive</h5>
+          <select id="harddrive" name="harddrive">
+            <option value="" disabled selected>Select Harddrive</option>
+            {% for harddrive in harddrive %}
+            <option value="{{harddrive.harddrive}}">{{harddrive.hard_drive}}</option>
             {% endfor %}
           </select>
         </div>
-        <div class="input-field col l12 s6">
-          <h5>Motherboard</h5>
-          <select id="motherboard" name="motherboard">
-            <option value="" disabled selected>Select Motherboard</option>
-            {% for motherboard in motherboard %}
-            <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
+        <div class="input-field col s12">
+          <h5>Power Supply</h5>
+          <select id="powersupply" name="powersupply">
+            <option value="" disabled selected>Select Power Supply</option>
+            {% for powersupply in powersupply %}
+            <option value="{{powersupply.powersupply}}">{{powersupply.power_supply}}</option>
             {% endfor %}
           </select>
         </div>
-        <div class="input-field col l12 s6">
-          <h5>Motherboard</h5>
-          <select id="motherboard" name="motherboard">
-            <option value="" disabled selected>Select Motherboard</option>
-            {% for motherboard in motherboard %}
-            <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
+        <div class="input-field col s12">
+          <h5>Case</h5>
+          <select id="case" name="case">
+            <option value="" disabled selected>Select Case</option>
+            {% for case in case %}
+            <option value="{{case.case}}">{{case.case}}</option>
             {% endfor %}
           </select>
         </div>
       </div>
+      <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Add build
+    <i class="material-icons right">add</i>
+  </button>
     </form>
   </div>
-  <a class="red darken-1 waves-effect waves-light btn-large center"
-    >Add Build</a>
+  
 </div>
 
 {% endblock %}
