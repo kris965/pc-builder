@@ -7,19 +7,14 @@ content %} {% endblock %} {% block addbuild %}
       <h5>Name</h5>
       <div class="row">
         <div class="input-field col s12">
-          <input
-            placeholder="Enter the name of your build"
-            id="name"
-            type="text"
-            class="validate"
-            required
-          />
-        </div>
+                <input id="build_name" name="build_name" type="text">
+                <label for="icon_prefix">Name Of Your Build</label>
+            </div>
         <div class="input-field col s12">
           <h5>Motherboard</h5>
           <select id="motherboard" name="motherboard">
             <option value="" disabled selected>Select Motherboard</option>
-            {% for motherboard in motherboard %}
+            {% for motherboard in motherboards %}
             <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
             {% endfor %}
           </select>
@@ -28,17 +23,17 @@ content %} {% endblock %} {% block addbuild %}
           <h5>Processor</h5>
           <select id="processor" name="processor">
             <option value="" disabled selected>Select Processor</option>
-            {% for processor in processor %}
+            {% for processor in processors %}
             <option value="{{processor.processor}}">{{processor.processor}}</option>
             {% endfor %}
           </select>
         </div>
         <div class="input-field col s12">
           <h5>Processor Cooler</h5>
-          <select id="processorcooler" name="processorcooler">
+          <select id="processor_cooler" name="processor_cooler">
             <option value="" disabled selected>Select Processor Cooler</option>
-            {% for processorcooler in processorcooler %}
-            <option value="{{processorcooler.processorcooler}}">{{processorcooler.processor_cooler}}</option>
+            {% for processorcooler in processorcoolers %}
+            <option value="{{processorcooler.processor_cooler}}">{{processorcooler.processor_cooler}}</option>
             {% endfor %}
           </select>
         </div>
@@ -53,28 +48,28 @@ content %} {% endblock %} {% block addbuild %}
         </div>
         <div class="input-field col s12">
           <h5>Graphics Card</h5>
-          <select id="graphicscard" name="graphicscard">
+          <select id="graphics_card" name="graphics_card">
             <option value="" disabled selected>Select Graphics Card</option>
-            {% for graphicscard in graphicscard %}
-            <option value="{{graphicscard.graphicscard}}">{{graphicscard.graphics_card}}</option>
+            {% for graphicscard in graphicscards %}
+            <option value="{{graphicscard.graphics_card}}">{{graphicscard.graphics_card}}</option>
             {% endfor %}
           </select>
         </div>
         <div class="input-field col s12">
           <h5>Hard Drive</h5>
-          <select id="harddrive" name="harddrive">
+          <select id="hard_drive" name="hard_drive">
             <option value="" disabled selected>Select Harddrive</option>
-            {% for harddrive in harddrive %}
-            <option value="{{harddrive.harddrive}}">{{harddrive.hard_drive}}</option>
+            {% for harddrive in harddrives %}
+            <option value="{{harddrive.hard_drive}}">{{harddrive.hard_drive}}</option>
             {% endfor %}
           </select>
         </div>
         <div class="input-field col s12">
           <h5>Power Supply</h5>
-          <select id="powersupply" name="powersupply">
+          <select id="power_supply" name="power_supply">
             <option value="" disabled selected>Select Power Supply</option>
-            {% for powersupply in powersupply %}
-            <option value="{{powersupply.powersupply}}">{{powersupply.power_supply}}</option>
+            {% for powersupply in powersupplies %}
+            <option value="{{powersupply.power_supply}}">{{powersupply.power_supply}}</option>
             {% endfor %}
           </select>
         </div>
@@ -82,7 +77,7 @@ content %} {% endblock %} {% block addbuild %}
           <h5>Case</h5>
           <select id="case" name="case">
             <option value="" disabled selected>Select Case</option>
-            {% for case in case %}
+            {% for case in cases %}
             <option value="{{case.case}}">{{case.case}}</option>
             {% endfor %}
           </select>
