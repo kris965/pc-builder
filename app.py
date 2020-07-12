@@ -15,6 +15,12 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 
 
+@app.route('/')
+@app.route('/home_page')
+def home_page():
+    return render_template("index.html")
+
+
 @app.route('/all_builds')
 def all_builds():
     return render_template("allbuilds.html", builds=mongo.db.build.find())
@@ -22,7 +28,6 @@ def all_builds():
 # Add build form
 
 
-@app.route('/')
 @app.route('/add_build')
 def add_build():
     build_names = mongo.db.build.find()
@@ -47,15 +52,40 @@ def insert_build():
 @app.route('/edit_build/<build_id>')
 def edit_build(build_id):
     the_build = mongo.db.build.find_one({"_id": ObjectId(build_id)})
-    all_cases = mongo.db.case.find(),
-    all_graphics_cards = mongo.db.graphicscard.find(),
-    all_hard_drives = mongo.db.harddrive.find(),
-    all_memory = mongo.db.memory.find(),
-    all_motherboards = mongo.db.motherboard.find(),
-    all_power_supplies = mongo.db.powersupply.find(),
-    all_processors = mongo.db.processor.find(),
-    all_processor_coolers = mongo.db.processorcooler.find()
-    return render_template('editbuild.html', build=the_build, cases=all_cases, graphicscards=all_graphics_cards, harddrives=all_hard_drives, memory=all_memory, motherboards=all_motherboards, powersupplies=all_power_supplies, processors=all_processors, processorcoolers=all_processor_coolers ) 
+    motherboards = mongo.db.motherboard.find()
+    processors = mongo.db.processor.find()
+    processorcoolers = mongo.db.processorcooler.find()
+    memory = mongo.db.memory.find()
+    graphicscards = mongo.db.graphicscard.find()
+    harddrives = mongo.db.harddrive.find()
+    powersupplies = mongo.db.powersupply.find()
+    cases = mongo.db.case.find()
+    return render_template('editbuild.html', motherboards=motherboards, processors=processors, processorcoolers=processorcoolers, memory=memory, graphicscards=graphicscards, harddrives=harddrives, powersupplies=powersupplies, cases=cases, build=the_build)
+
+
+@app.route('/update_build/<build_id>', methods=["POST"])
+def update_build(build_id):
+    build = mongo.db.build
+    build.update({'_id': ObjectId(build_id)},
+                 {
+        'build_name': request.form.get('build_name'),
+        'motherboard': request.form.get('motherboard'),
+        'processor': request.form.get('processor'),
+        'processor_cooler': request.form.get('processor_cooler'),
+        'memory': request.form.get('memory'),
+        'graphics_card': request.form.get('graphics_card'),
+        'hard_drive': request.form.get('hard_drive'),
+        'power_supply': request.form.get('power_supply'),
+        'case': request.form.get('case')
+
+    })
+    return redirect(url_for('all_builds'))
+
+
+@app.route('/delete_build/<build_id>')
+def delete_build(build_id):
+    mongo.db.build.remove({'_id': ObjectId(build_id)})
+    return redirect(url_for('all_builds'))
 
 
 if __name__ == '__main__':
