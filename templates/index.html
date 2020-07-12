@@ -16,7 +16,7 @@
 				<img src="/static/img/gamepc.jpg" alt="pc">
 				<div class="caption center-align">
 					<h3>Check out our builds!</h3>
-					<a class="red darken-1 waves-effect waves-light btn-large">View all builds</a>
+					<a href="{{url_for('all_builds')}}" class="red darken-1 waves-effect waves-light btn-large">View all builds</a>
 				</div>
 			</li>
 			<li>
@@ -24,7 +24,7 @@
 				<div class="caption center-align">
 					<h3>Want to create your own build?</h3>
 					<h5 class="light grey-text text-lighten-3">Click here to get started!</h5>
-					<a class=" red darken-1 waves-effect waves-light btn-large">Add your build</a>
+					<a href= "{{url_for('add_build')}}" class=" red darken-1 waves-effect waves-light btn-large">Add your build</a>
 				</div>
 			</li>
 			
