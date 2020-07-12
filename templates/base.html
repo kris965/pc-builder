@@ -28,12 +28,12 @@
 </ul>
 		<nav class="red darken-4">
 			<div class="nav-wrapper">
-				<a href="index.html" class="brand-logo center ">PC BUILDER</a>
+				<a href="{{url_for('home_page')}}" class="brand-logo center ">PC BUILDER</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
-                <li><a href="templates/addbuild.html"><i class="material-icons left">apps</i>View all buils</a></li>
+                <li><a href="{{url_for('all_builds')}}"><i class="material-icons left">apps</i>View all buils</a></li>
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Search build by:<i class="material-icons left">arrow_drop_down</i></a></li>
-					<li><a href="templates/searchbuild.html"><i class="material-icons left">add</i>Add a build</a></li>
+					<li><a href="{{url_for('add_build')}}"><i class="material-icons left">add</i>Add a build</a></li>
 				</ul>
 			</div>
 		</nav>
