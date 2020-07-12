@@ -15,7 +15,7 @@
 				<span class="card-title activator grey-text text-darken-4">{{build.build_name}}<i class="material-icons right">more_vert</i></span>
 
 				<a href="{{url_for('edit_build', build_id=build._id)}}" class="waves-effect waves-light btn">Edit</a>
-				<a class="waves-effect waves-light btn">Delete</a>
+				<a href="{{url_for('delete_build', build_id=build._id)}}" class="waves-effect waves-light btn">Delete</a>
 			</div>
 			<div class="card-reveal">
 				<span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
@@ -27,19 +27,19 @@
 				<p class="part-description">{{build.processor}}</p>
 				<div class="divider"></div>
 				<h6 class="part-name">Processor Cooler</h6>
-				<p class="part-description">{{build.processorcooler}}</p>
+				<p class="part-description">{{build.processor_cooler}}</p>
 				<div class="divider"></div>
 				<h6 class="part-name">Memory</h6>
 				<p class="part-description">{{build.memory}}</p>
 				<div class="divider"></div>
 				<h6 class="part-name">Grapics Card</h6>
-				<p class="part-description">{{build.graphicscard}}</p>
+				<p class="part-description">{{build.graphics_card}}</p>
 				<div class="divider"></div>
 				<h6 class="part-name">Hard Drive</h6>
-				<p class="part-description">{{build.harddrive}}</p>
+				<p class="part-description">{{build.hard_drive}}</p>
 				<div class="divider"></div>
 				<h6 class="part-name">Power Supply</h6>
-				<p class="part-description">{{build.powersupply}}</p>
+				<p class="part-description">{{build.power_supply}}</p>
 				<div class="divider"></div>
 				<h6 class="part-name">Case</h6>
 				<p class="part-description">{{build.case}}</p>
