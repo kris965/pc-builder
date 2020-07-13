@@ -1,15 +1,19 @@
 {% extends "base.html" %}
-{% block title %}Seach by Case{% endblock %} 
-{% block searchpowersupply %}
-    <div class="container">
-    <h3>Search build by Power Supply</h3>
-    <div class="input-field col l12 s6">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-  </div>
-      </div>
-{% endblock %}
+{% block title %}Seach by Power Supply{% endblock %}
+{% block searchmotherboard %}
+<div class="container">
+<div class="row">
+<form action="{{ url_for('search_case') }}" method="POST"  class="col s12">
+	<h3>Search build by Power Supply</h3>
+	<div class="input-field col s12">
+		<select id="power_supply" name="power_supply">
+            <option value="" disabled selected>Select Power Supply</option>
+            {% for powersupply in powersupplies %}
+            <option value="{{powersupply.power_supply}}">{{powersupply.power_supply}}</option>
+            {% endfor %}
+          </select>
+		<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
+    <i class="material-icons right">search</i>
+  </button>
+	</div>
+	{% endblock %}

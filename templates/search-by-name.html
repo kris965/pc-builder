@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Seach by Case{% endblock %} 
-{% block searchname %}
-    <div class="container">
-    <h3>Search build by Name</h3>
-    <div class="input-field col l12 s6">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-  </div>
-      </div>
-{% endblock %}
+{% block title %}Seach by Motherboard{% endblock %}
+{% block searchmotherboard %}
+<div class="container">
+	<h3>Create your build</h3>
+	<div class="row">
+		<form action="{{ url_for('insert_build') }}" method="POST" class="col s12">
+			<h5>Name</h5>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="build_name" name="build_name" type="text">
+					<label for="icon_prefix">Name Of Your Build</label>
+				</div>
+			</div>
+			{% endblock %}

@@ -1,15 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Seach by Processor{% endblock %}
+{% block title %}Seach by Processor Cooler{% endblock %}
 {% block searchmotherboard %}
 <div class="container">
 <div class="row">
 <form action="{{ url_for('search_case') }}" method="POST"  class="col s12">
-	<h3>Search build by Processor</h3>
+	<h3>Search build by Processor Cooler</h3>
 	<div class="input-field col s12">
-		<select id="processor" name="processor">
-            <option value="" disabled selected>Select Processor</option>
-            {% for processor in processors %}
-            <option value="{{processor.processor}}">{{processor.processor}}</option>
+		<select id="processor_cooler" name="processor_cooler">
+            <option value="" disabled selected>Select Processor Cooler</option>
+            {% for processorcooler in processorcoolers %}
+            <option value="{{processorcooler.processor_cooler}}">{{processorcooler.processor_cooler}}</option>
             {% endfor %}
           </select>
 		<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
