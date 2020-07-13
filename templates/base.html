@@ -8,66 +8,71 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 	<title>{% block title %} {% endblock %}</title>
 </head>
 
 <body>
-	
+
 	<div class="navbar-fixed">
-    <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Motherboard</a></li>
-  <li><a href="#!">Processor</a></li>
-  <li><a href="#!">Processor Cooler</a></li>
-  <li><a href="#!">Memory</a></li>
-  <li><a href="#!">Graphics Card</a></li>
-  <li><a href="#!">Hard Drive</a></li>
-  <li><a href="#!">Power Supply</a></li>
-  <li><a href="#!">Case</a></li>
-  
-</ul>
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="{{url_for('search_motherboard')}}">Motherboard</a></li>
+			<li><a href="{{url_for('search_processor')}}">Processor</a></li>
+			<li><a href="{{url_for('search_processor_cooler')}}">Processor Cooler</a></li>
+			<li><a href="{{url_for('search_graphics_card')}}">Graphics Card</a></li>
+			<li><a href="{{url_for('search_memory')}}">Memory</a></li>
+			<li><a href="{{url_for('search_hard_drive')}}">Hard Drive</a></li>
+			<li><a href="{{url_for('search_power_supply')}}">Power Supply</a></li>
+			<li><a href="{{url_for('search_case')}}">Case</a></li>
+
+		</ul>
 		<nav class="red darken-4">
 			<div class="nav-wrapper">
 				<a href="{{url_for('home_page')}}" class="brand-logo center ">PC BUILDER</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
-                <li><a href="{{url_for('all_builds')}}"><i class="material-icons left">apps</i>View all buils</a></li>
-					<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Search build by:<i class="material-icons left">arrow_drop_down</i></a></li>
+					<li><a href="{{url_for('all_builds')}}"><i class="material-icons left">apps</i>View all buils</a>
+					</li>
+					<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Search build
+							by:<i class="material-icons left">arrow_drop_down</i></a></li>
 					<li><a href="{{url_for('add_build')}}"><i class="material-icons left">add</i>Add a build</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
 	<ul class="sidenav collapsible" id="mobile-demo">
-        <li><a href="templates/addbuild.html"><i class="material-icons left">apps</i>View all buils</a></li>
+		<li><a href="{{url_for('all_builds')}}"><i class="material-icons left">apps</i>View all buils</a></li>
 		<li>
-      <div class="collapsible-header"><i class="material-icons left">search</i>Search build by</div>
-      <div class="collapsible-body"><span><a href="#!">Motherboard</a></span></div>
-      <div class="collapsible-body"><span><a href="#!">Processor</a></span></div>
-      <div class="collapsible-body"><span><a href="#!">Processor Cooler</a></span></div>
-      <div class="collapsible-body"><span><a href="#!">Graphics Card</a></span></div>
-      <div class="collapsible-body"><span><a href="#!">Memory</a></span></div>
-      <div class="collapsible-body"><span><a href="#!">Hard Drive</a></span></div>
-      <div class="collapsible-body"><span><a href="#!">Power Supply</a></span></div>
-      <div class="collapsible-body"><span><a href="#!">Case</a></span></div>
-    </li>
-		<li><a href=""><i class="material-icons left">add</i>Add a build</a></li>
+			<div class="collapsible-header"><i class="material-icons left">search</i>Search build by</div>
+			<div class="collapsible-body"><span><a href="{{url_for('search_motherboard')}}">Motherboard</a></span></div>
+			<div class="collapsible-body"><span><a href="{{url_for('search_processor')}}">Processor</a></span></div>
+			<div class="collapsible-body">
+				<span><a href="{{url_for('search_processor_cooler')}}">Processor Cooler</a></span></div>
+			<div class="collapsible-body"><span><a href="{{url_for('search_graphics_card')}}">Graphics Card</a></span>
+			</div>
+			<div class="collapsible-body"><span><a href="{{url_for('search_memory')}}">Memory</a></span></div>
+			<div class="collapsible-body"><span><a href="{{url_for('search_hard_drive')}}">Hard Drive</a></span></div>
+			<div class="collapsible-body"><span><a href="{{url_for('search_power_supply')}}">Power Supply</a></span>
+			</div>
+			<div class="collapsible-body"><span><a href="{{url_for('search_case')}}">Case</a></span></div>
+		</li>
+		<li><a href="{{url_for('add_build')}}"><i class="material-icons left">add</i>Add a build</a></li>
 	</ul>
-    {% block content %}{% endblock %}
-    {% block addbuild %} {% endblock %}
-    {% block editbuild %} {% endblock %}
-    {% block allbuilds %} {% endblock %}
-    {% block home %} {% endblock %}
-    {% block index %} {% endblock %}
-    {% block searchcase %} {% endblock %}
-    {% block searchgraphics %} {% endblock %}
-    {% block searchharddrive %} {% endblock %}
-    {% block searchmemory %} {% endblock %}
-    {% block searchmotherboard %} {% endblock %}
-    {% block searchname %} {% endblock %}
-    {% block searchpowersupply %} {% endblock %}
-    {% block searchprocessor %} {% endblock %}
-    {% block searchprocessorcooler %} {% endblock %}
+	{% block content %}{% endblock %}
+	{% block addbuild %} {% endblock %}
+	{% block editbuild %} {% endblock %}
+	{% block allbuilds %} {% endblock %}
+	{% block home %} {% endblock %}
+	{% block index %} {% endblock %}
+	{% block searchcase %} {% endblock %}
+	{% block searchgraphics %} {% endblock %}
+	{% block searchharddrive %} {% endblock %}
+	{% block searchmemory %} {% endblock %}
+	{% block searchmotherboard %} {% endblock %}
+	{% block searchname %} {% endblock %}
+	{% block searchpowersupply %} {% endblock %}
+	{% block searchprocessor %} {% endblock %}
+	{% block searchprocessorcooler %} {% endblock %}
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="{{ url_for('static', filename='js/pcbuilder.js') }}"></script>
