@@ -3,17 +3,17 @@
 {% block searchmotherboard %}
 <div class="container">
 <div class="row">
-<form action="{{ url_for('search_build') }}" method="POST"  class="col s12">
-	<h3>Search build by Graphics Card</h3>
-	<div class="input-field col s12">
-		<select id="graphics_card" name="graphics_card">
-            <option value="" disabled selected>Select Graphics Card</option>
-            {% for graphicscard in graphicscards %}
-            <option value="{{graphicscard.graphics_card}}">{{graphicscard.graphics_card}}</option>
-            {% endfor %}
-          </select>
-		<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
-    <i class="material-icons right">search</i>
-  </button>
-	</div>
-	{% endblock %}
+<h3>Search build by Graphics Card</h3>
+<form action="{{ url_for('search_build_by_graphics_card') }}" method="POST" class="col s12">
+<div class="input-field col s12">
+   <select id="search_build_by_graphics_card" name="search_build_by_graphics_card">
+      <option value="" disabled selected>Select Graphics Card</option>
+      {% for graphics_card in graphics_cards %}
+      <option value="{{graphics_card.graphics_card}}">{{graphics_card.graphics_card}}</option>
+      {% endfor %}
+   </select>
+   <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
+   <i class="material-icons right">search</i>
+   </button>
+</div>
+{% endblock %}

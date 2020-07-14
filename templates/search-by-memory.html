@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Seach by Memory{% endblock %}
-{% block searchmotherboard %}
+{% block searchmemory %}
 <div class="container">
-	<div class="row">
-		<h3>Search build by Memory</h3>
-		<form action="{{url_for('search_build')}}" method="POST" class="col s12">
-			<div class="input-field col s12">
-				<select id="search_build" type="search" placeholder="Search" name="search_build">
-            <option value="" disabled selected>Select Memory</option>
-            {% for memory in memory %}
-            <option value="{{memory.memory}}">{{memory.memory}}</option>
-            {% endfor %}
-          </select>
-				<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
-    <i class="material-icons right">search</i>
-  </button>
-			</div>
-			{% endblock %}
+<div class="row">
+<h3>Search build by Memory</h3>
+<form action="{{url_for('search_build_by_memory')}}" method="POST" class="col s12">
+<div class="input-field col s12">
+   <select id="search_build_by_memory" type="search" placeholder="Search" name="search_build_by_memory">
+      <option value="" disabled selected>Select Memory</option>
+      {% for memory in memory %}
+      <option value="{{memory.memory}}">{{memory.memory}}</option>
+      {% endfor %}
+   </select>
+   <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
+   <i class="material-icons right">search</i>
+   </button>
+</div>
+{% endblock %}

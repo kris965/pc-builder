@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% block title %}Seach by Processor{% endblock %}
-{% block searchmotherboard %}
+{% block searchprocessor %}
 <div class="container">
 <div class="row">
-<form action="{{ url_for('search_case') }}" method="POST"  class="col s12">
-	<h3>Search build by Processor</h3>
-	<div class="input-field col s12">
-		<select id="processor" name="processor">
-            <option value="" disabled selected>Select Processor</option>
-            {% for processor in processors %}
-            <option value="{{processor.processor}}">{{processor.processor}}</option>
-            {% endfor %}
-          </select>
-		<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
-    <i class="material-icons right">search</i>
-  </button>
-	</div>
-	{% endblock %}
+<h3>Search build by Processor</h3>
+<form action="{{ url_for('search_build_by_processor') }}" method="POST" class="col s12">
+<div class="input-field col s12">
+   <select id="search_build_by_processor" name="search_build_by_processor">
+      <option value="" disabled selected>Select Processor</option>
+      {% for processor in processors %}
+      <option value="{{processor.processor}}">{{processor.processor}}</option>
+      {% endfor %}
+   </select>
+   <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
+   <i class="material-icons right">search</i>
+   </button>
+</div>
+{% endblock %}
