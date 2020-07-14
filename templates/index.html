@@ -2,32 +2,31 @@
 {% block title %}PC BUILDER{% endblock %} 
 {% block content %}
 {% endblock %}
- {% block index %}
+{% block index %}
 <div class="slider fullscreen">
-		<ul class="slides">
-			<li>
-				<img src="/static/img/pcbg.jpg" alt="pc">
-				<div class="caption center-align">
-					<h3 class="head-text">Welcome to PC BUILDER</h3>
-					<h5 class="sub-text light grey-text text-lighten-3">The custom pc builder</h5>
-				</div>
-			</li>
-			<li>
-				<img src="/static/img/gamepc.jpg" alt="pc">
-				<div class="caption center-align">
-					<h3>Check out our builds!</h3>
-					<a href="{{url_for('all_builds')}}" class="red darken-1 waves-effect waves-light btn-large">View all builds</a>
-				</div>
-			</li>
-			<li>
-				<img src="/static/img/gamepc2.jpg" alt="pc">
-				<div class="caption center-align">
-					<h3>Want to create your own build?</h3>
-					<h5 class="light grey-text text-lighten-3">Click here to get started!</h5>
-					<a href= "{{url_for('add_build')}}" class=" red darken-1 waves-effect waves-light btn-large">Add your build</a>
-				</div>
-			</li>
-			
-		</ul>
-	</div>
+   <ul class="slides">
+      <li>
+         <img src="/static/img/pcbg.jpg" alt="pc">
+         <div class="caption center-align">
+            <h3 class="head-text">Welcome to PC BUILDER</h3>
+            <h5 class="sub-text light grey-text text-lighten-3">The custom pc builder</h5>
+         </div>
+      </li>
+      <li>
+         <img src="/static/img/gamepc.jpg" alt="pc">
+         <div class="caption center-align">
+            <h3>Check out our builds!</h3>
+            <a href="{{url_for('all_builds')}}" class="red darken-1 waves-effect waves-light btn-large">View all builds</a>
+         </div>
+      </li>
+      <li>
+         <img src="/static/img/gamepc2.jpg" alt="pc">
+         <div class="caption center-align">
+            <h3>Want to create your own build?</h3>
+            <h5 class="light grey-text text-lighten-3">Click here to get started!</h5>
+            <a href= "{{url_for('add_build')}}" class=" red darken-1 waves-effect waves-light btn-large">Add your build</a>
+         </div>
+      </li>
+   </ul>
+</div>
 {% endblock %}
