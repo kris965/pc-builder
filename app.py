@@ -4,12 +4,11 @@ Flask: Allow template functionality
 Pymongo: Allows interaction between python and MongoDB
 """
 import os
-from os import path
 from bson.objectid import ObjectId
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 
-
+from os import path
 if path.exists("env.py"):
     import env
 
