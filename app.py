@@ -90,7 +90,7 @@ def edit_build(build_id):
      finds all collection data to populate the forms with options
     """
 
-    update_build = mongo.db.build.find_one({"_id": ObjectId(build_id)})
+    build = mongo.db.build.find_one({"_id": ObjectId(build_id)})
     motherboards = mongo.db.motherboard.find()
     processors = mongo.db.processor.find()
     processor_coolers = mongo.db.processorcooler.find()
@@ -108,7 +108,7 @@ def edit_build(build_id):
         graphicscards=graphics_cards,
         harddrives=hard_drives,
         powersupplies=power_supplies,
-        cases=cases, build=update_build)
+        cases=cases, build=build)
 
 
 @app.route('/update_build/<build_id>', methods=["POST"])
@@ -131,7 +131,7 @@ def update_build(build_id):
         'case': request.form.get('case')
         }
 
-    build.update({'_id': ObjectId(build_id)}, build_params)
+    build.replace_one({'_id': ObjectId(build_id)}, build_params)
     return redirect(url_for('all_builds'))
 
 
@@ -143,7 +143,7 @@ def delete_build(build_id):
        Then gets redirected to all builds page
     """
 
-    mongo.db.build.remove({'_id': ObjectId(build_id)})
+    mongo.db.build.delete_one({'_id': ObjectId(build_id)})
     return redirect(url_for('all_builds'))
 
 
