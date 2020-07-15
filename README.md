@@ -220,7 +220,7 @@ memory: <String>
 ###### motherboard
 ```
 _id: <ObjectId>
-power_supply: <String>
+motherboard: <String>
 ```
 ###### powersupply
 ```
