@@ -4,9 +4,9 @@ Flask: Allow template functionality
 Pymongo: Allows interaction between python and MongoDB
 """
 import os
-from bson.objectid import ObjectId
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 from os import path
 if path.exists("env.py"):
@@ -36,8 +36,6 @@ def all_builds():
     """
 
     return render_template("allbuilds.html", builds=mongo.db.build.find())
-
-# Add build form
 
 
 @app.route('/add_build')
