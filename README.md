@@ -43,13 +43,12 @@ So it is easy to use and easy to navigate through.
 
 
 #### Framework
-[Materialize](https://materializecss.com/), chosen for this project for its modern UI and easy to use of use. I used it for creating the navigation bar, cards, button, colors and made use of the grid system  
-[JQuery](https://jquery.com/) Was used for initializing Materialize elements
+- [Materialize](https://materializecss.com/), chosen for this project for its modern UI and easy to use of use. I used it for creating the navigation bar, cards, button, colors and made use of the grid system  
+- [JQuery](https://jquery.com/) Was used for initializing Materialize elements
 
 
 ### Wireframes
-[Balsamiq Wireframes](https://balsamiq.com/) Was used to create the wireframes of this project
-
+- [Balsamiq Wireframes](https://balsamiq.com/) Was used to create the wireframes of this project
 The wireframes for this project can be found in the wireframes directory.
 
 ---
@@ -58,7 +57,7 @@ The wireframes for this project can be found in the wireframes directory.
 ### Existing Features
 #### Navbar   
 
-The navbar is fixed at the top of the page, this allows a user to navigate throughout the website without having to scroll all the way up. The PCBuilder logo redirects the user to the home page.
+- The navbar is fixed at the top of the page, this allows a user to navigate throughout the website without having to scroll all the way up. The PCBuilder logo redirects the user to the home page.
 On the smaller screens the navbar gets collapsed and a burger icon is visable. A menu will slide out from the left containing the menu items. 
 
 #### Add a Build   
@@ -76,8 +75,8 @@ On the smaller screens the navbar gets collapsed and a burger icon is visable. A
 #### Search Build
 - User can use the dropdown menu in the navigation bar to select a component to search on. When selecting a component the user is taken to a search page where they then can select a part they want to search on. the user is then taken to a page which has the same layout as 'View all builds' displaying the builds that contain that part that the user has searched on.
 ---
-### Features ideas:
-There are some features that I've wanted toimplemented but due to time constraints was not able to do so. 
+### Feature ideas:
+There are some features that I want to implement but due to time wasn't able to do so. I might want to add these in the future
 
 #### Login function
 - Login functionality so users can view their own builds they have added. 
@@ -267,7 +266,7 @@ Deploying the app to [Heroku](https://heroku.com/):
 ## Credits
 
 ### Media
- - Images for the slider on the home page were taken from [Unsplash](https://unsplash.com/) except the ones added by other users.
+ - Images for the slider on the home page were taken from [Unsplash](https://unsplash.com/).
 
 ### Acknowledgements
 -  the Code Institute Slack community was really helpful during the development of this project.
