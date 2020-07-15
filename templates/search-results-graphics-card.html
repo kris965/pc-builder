@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Search Results{% endblock %}
+{% block title %}All Builds{% endblock %}
 {% block content %}
 {% endblock %}
 {% block allbuilds %}
 <div class="container">
-	<h3>Search Results:</h3>
+<h3>Search Results:</h3>
 	<h4 class="center-align standard-font">Found {{count}} result(s).</h4>
 	{% for build in graphics_card_search %}
 	<div class="row">
@@ -44,7 +44,7 @@
 				<p class="part-description">{{build.case}}</p>
 			</div>
 		</div>
+		{% endfor %}
+		{% endblock %}
 	</div>
 </div>
-{% endfor %}
-{% endblock %}

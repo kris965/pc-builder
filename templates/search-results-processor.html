@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Search Results{% endblock %}
+{% block title %}All Builds{% endblock %}
 {% block content %}
 {% endblock %}
 {% block allbuilds %}
 <div class="container">
-	<h3>Search Results:</h3>
+<h3>Search Results:</h3>
 	<h4 class="center-align standard-font">Found {{count}} result(s).</h4>
-	{% for build in processor_search %}
+	{% for build in processor_cooler_search %}
 	<div class="row">
 		<div class="card col s12">
 			<div class="card-image waves-effect waves-block waves-light">
@@ -44,7 +44,7 @@
 				<p class="part-description">{{build.case}}</p>
 			</div>
 		</div>
+		{% endfor %}
+		{% endblock %}
 	</div>
 </div>
-{% endfor %}
-{% endblock %}

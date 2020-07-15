@@ -1,14 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Search Results{% endblock %}
+{% block title %}All Builds{% endblock %}
 {% block content %}
 {% endblock %}
 {% block allbuilds %}
 <div class="container">
-	<h3>Search Results:</h3>
-    <!-- This following syntax remains the same across all search-results... templates  -->
-    <!-- Shows number of results -->
+<h3>Search Results:</h3>
 	<h4 class="center-align standard-font">Found {{count}} result(s).</h4>
-    <!-- loops through the collection and displays results based on the search  -->
 	{% for build in case_search %}
 	<div class="row">
 		<div class="card col s12">
@@ -47,7 +44,7 @@
 				<p class="part-description">{{build.case}}</p>
 			</div>
 		</div>
+		{% endfor %}
+		{% endblock %}
 	</div>
 </div>
-{% endfor %}
-{% endblock %}
