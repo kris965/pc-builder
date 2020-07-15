@@ -2,18 +2,19 @@
 {% block title %}Seach by Graphics Card{% endblock %}
 {% block searchmotherboard %}
 <div class="container">
-<div class="row">
-<h3>Search build by Graphics Card</h3>
-<form action="{{ url_for('search_build_by_graphics_card') }}" method="POST" class="col s12">
-<div class="input-field col s12">
-   <select id="search_build_by_graphics_card" name="search_build_by_graphics_card">
+	<div class="row">
+		<h3>Search build by Graphics Card</h3>
+		<form action="{{ url_for('search_build_by_graphics_card') }}" method="POST" class="col s12">
+			<div class="input-field col s12">
+				<select id="search_build_by_graphics_card" name="search_build_by_graphics_card" required>
       <option value="" disabled selected>Select Graphics Card</option>
       {% for graphics_card in graphics_cards %}
       <option value="{{graphics_card.graphics_card}}">{{graphics_card.graphics_card}}</option>
       {% endfor %}
    </select>
-   <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
+				<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
    <i class="material-icons right">search</i>
    </button>
-</div>
-{% endblock %}
+			</div>
+	</div>
+	{% endblock %}

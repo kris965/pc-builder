@@ -2,18 +2,19 @@
 {% block title %}Seach by Power Supply{% endblock %}
 {% block searchpowersupply %}
 <div class="container">
-<div class="row">
-<h3>Search build by Power Supply</h3>
-<form action="{{ url_for('search_build_by_power_supply') }}" method="POST" class="col s12">
-<div class="input-field col s12">
-   <select id="search_build_by_power_supply" name="search_build_by_power_supply">
+	<div class="row">
+		<h3>Search build by Power Supply</h3>
+		<form action="{{ url_for('search_build_by_power_supply') }}" method="POST" class="col s12">
+			<div class="input-field col s12">
+				<select id="search_build_by_power_supply" name="search_build_by_power_supply" required>
       <option value="" disabled selected>Select Power Supply</option>
       {% for powersupply in powersupplies %}
       <option value="{{powersupply.power_supply}}">{{powersupply.power_supply}}</option>
       {% endfor %}
    </select>
-   <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
+				<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
    <i class="material-icons right">search</i>
    </button>
-</div>
-{% endblock %}
+			</div>
+	</div>
+	{% endblock %}

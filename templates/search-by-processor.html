@@ -6,7 +6,7 @@
 <h3>Search build by Processor</h3>
 <form action="{{ url_for('search_build_by_processor') }}" method="POST" class="col s12">
 <div class="input-field col s12">
-   <select id="search_build_by_processor" name="search_build_by_processor">
+   <select id="search_build_by_processor" name="search_build_by_processor" required>
       <option value="" disabled selected>Select Processor</option>
       {% for processor in processors %}
       <option value="{{processor.processor}}">{{processor.processor}}</option>

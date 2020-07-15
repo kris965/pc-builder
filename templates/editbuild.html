@@ -1,19 +1,21 @@
 {% extends "base.html" %} {% block title %}Edit Build{% endblock %} {% block
 content %} {% endblock %} {% block addbuild %}
 <div class="container">
-  <h3>Edit Build</h3>
-  <div class="row">
-    <form action="{{ url_for('update_build', build_id=build._id) }}" method="POST" class="col s12">
-      <h5>Name</h5>
-      <div class="row">
-        <div class="input-field col s12">
-                <input id="build_name" name="build_name" type="text" value="{{build.build_name}}">
-                <label for="icon_prefix">Name Of Your Build</label>
-            </div>
-        <div class="input-field col s12">
-          <h5>Motherboard</h5>
-          <select id="motherboard" name="motherboard">
+	<h3>Edit Build</h3>
+	<div class="row">
+		<!-- action that call the update_build function to update the selected build -->
+		<form action="{{ url_for('update_build', build_id=build._id) }}" method="POST" class="col s12">
+			<h5>Name</h5>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="build_name" name="build_name" type="text" value="{{build.build_name}}" required>
+					<label for="icon_prefix">Name Of Your Build</label>
+				</div>
+				<div class="input-field col s12">
+					<h5>Motherboard</h5>
+					<select id="motherboard" name="motherboard">
             <option value="" disabled selected>Select Motherboard</option>
+            <!-- loops through the collections and check if it matches the build selected for editing -->
             {% for motherboard in motherboards %}
             {% if motherboard.motherboard == build.motherboard %}
             <option value="{{motherboard.motherboard}}" selected >{{motherboard.motherboard}}</option>
@@ -22,10 +24,10 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-        <div class="input-field col s12">
-          <h5>Processor</h5>
-          <select id="processor" name="processor">
+				</div>
+				<div class="input-field col s12">
+					<h5>Processor</h5>
+					<select id="processor" name="processor">
             <option value="" disabled selected>Select Processor</option>
             {% for processor in processors %}
             {% if processor.processor == build.processor %}
@@ -35,10 +37,10 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-        <div class="input-field col s12">
-          <h5>Processor Cooler</h5>
-          <select id="processor_cooler" name="processor_cooler">
+				</div>
+				<div class="input-field col s12">
+					<h5>Processor Cooler</h5>
+					<select id="processor_cooler" name="processor_cooler">
             <option value="" disabled selected>Select Processor Cooler</option>
             {% for processorcooler in processorcoolers %}
             {% if processorcooler.processor_cooler == build.processor_cooler %}
@@ -48,10 +50,10 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-        <div class="input-field col s12">
-          <h5>Memory</h5>
-          <select id="memory" name="memory">
+				</div>
+				<div class="input-field col s12">
+					<h5>Memory</h5>
+					<select id="memory" name="memory">
             <option value="" disabled selected>Memory</option>
             {% for memory in memory %}
             {% if memory.memory == build.memory %}
@@ -61,10 +63,10 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-        <div class="input-field col s12">
-          <h5>Graphics Card</h5>
-          <select id="graphics_card" name="graphics_card">
+				</div>
+				<div class="input-field col s12">
+					<h5>Graphics Card</h5>
+					<select id="graphics_card" name="graphics_card">
             <option value="" disabled selected>Select Graphics Card</option>
             {% for graphicscard in graphicscards %}
             {% if graphicscard.graphics_card == build.graphics_card %}
@@ -74,10 +76,10 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-        <div class="input-field col s12">
-          <h5>Hard Drive</h5>
-          <select id="hard_drive" name="hard_drive">
+				</div>
+				<div class="input-field col s12">
+					<h5>Hard Drive</h5>
+					<select id="hard_drive" name="hard_drive">
             <option value="" disabled selected>Select Harddrive</option>
             {% for harddrive in harddrives %}
             {% if harddrive.hard_drive == build.hard_drive %}
@@ -87,10 +89,10 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-        <div class="input-field col s12">
-          <h5>Power Supply</h5>
-          <select id="power_supply" name="power_supply">
+				</div>
+				<div class="input-field col s12">
+					<h5>Power Supply</h5>
+					<select id="power_supply" name="power_supply">
             <option value="" disabled selected>Select Power Supply</option>
             {% for powersupply in powersupplies %}
             {% if powersupply.power_supply == build.power_supply %}
@@ -100,10 +102,10 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-        <div class="input-field col s12">
-          <h5>Case</h5>
-          <select id="case" name="case">
+				</div>
+				<div class="input-field col s12">
+					<h5>Case</h5>
+					<select id="case" name="case">
             <option value="" disabled selected>Case</option>
             {% for case in cases %}
             {% if case.case == build.case %}
@@ -113,14 +115,15 @@ content %} {% endblock %} {% block addbuild %}
             {% endif %}
             {% endfor %}
           </select>
-        </div>
-      </div>
-      <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Edit Build
+				</div>
+			</div>
+            <!-- Submit button to save changes to selected build -->
+			<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Edit Build
     <i class="material-icons right">add</i>
   </button>
-    </form>
-  </div>
-  
+		</form>
+	</div>
+
 </div>
 
 {% endblock %}

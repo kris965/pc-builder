@@ -1,92 +1,95 @@
 {% extends "base.html" %} {% block title %}Add a Build{% endblock %} {% block
 content %} {% endblock %} {% block addbuild %}
 <div class="container">
-   <h3>Create your build</h3>
-   <div class="row">
-      <form action="{{ url_for('insert_build') }}" method="POST"  class="col s12">
-         <h5>Name</h5>
-         <div class="row">
-            <div class="input-field col s12">
-               <input id="build_name" name="build_name" type="text" required>
-               <label for="icon_prefix">Name Of Your Build</label>
-            </div>
-            <div class="input-field col s12">
-               <h5>Motherboard</h5>
-               <select id="motherboard" name="motherboard">
+	<h3>Create your build</h3>
+	<div class="row">
+		<!-- Calls the insert build function when subbmitting form. -->
+		<form action="{{ url_for('insert_build') }}" method="POST" class="col s12">
+			<h5>Name</h5>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="build_name" name="build_name" type="text" required>
+					<label for="icon_prefix">Name Of Your Build</label>
+				</div>
+				<!-- loops through each of the parts collection to populate form options. -->
+				<div class="input-field col s12">
+					<h5>Motherboard</h5>
+					<select id="motherboard" name="motherboard" required>
                   <option value="" disabled selected>Select Motherboard</option>
                   {% for motherboard in motherboards %}
                   <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
                   {% endfor %}
                </select>
-            </div>
-            <div class="input-field col s12">
-               <h5>Processor</h5>
-               <select id="processor" name="processor">
+				</div>
+				<div class="input-field col s12">
+					<h5>Processor</h5>
+					<select id="processor" name="processor" required>
                   <option value="" disabled selected>Select Processor</option>
                   {% for processor in processors %}
                   <option value="{{processor.processor}}">{{processor.processor}}</option>
                   {% endfor %}
                </select>
-            </div>
-            <div class="input-field col s12">
-               <h5>Processor Cooler</h5>
-               <select id="processor_cooler" name="processor_cooler">
+				</div>
+				<div class="input-field col s12">
+					<h5>Processor Cooler</h5>
+					<select id="processor_cooler" name="processor_cooler" required>
                   <option value="" disabled selected>Select Processor Cooler</option>
                   {% for processorcooler in processorcoolers %}
                   <option value="{{processorcooler.processor_cooler}}">{{processorcooler.processor_cooler}}</option>
                   {% endfor %}
                </select>
-            </div>
-            <div class="input-field col s12">
-               <h5>Memory</h5>
-               <select id="memory" name="memory">
+				</div>
+				<div class="input-field col s12">
+					<h5>Memory</h5>
+					<select id="memory" name="memory" required>
                   <option value="" disabled selected>Memory</option>
                   {% for memory in memory %}
                   <option value="{{memory.memory}}">{{memory.memory}}</option>
                   {% endfor %}
                </select>
-            </div>
-            <div class="input-field col s12">
-               <h5>Graphics Card</h5>
-               <select id="graphics_card" name="graphics_card">
+				</div>
+				<div class="input-field col s12">
+					<h5>Graphics Card</h5>
+					<select id="graphics_card" name="graphics_card" required>
                   <option value="" disabled selected>Select Graphics Card</option>
                   {% for graphicscard in graphicscards %}
                   <option value="{{graphicscard.graphics_card}}">{{graphicscard.graphics_card}}</option>
                   {% endfor %}
                </select>
-            </div>
-            <div class="input-field col s12">
-               <h5>Hard Drive</h5>
-               <select id="hard_drive" name="hard_drive">
+				</div>
+				<div class="input-field col s12">
+					<h5>Hard Drive</h5>
+					<select id="hard_drive" name="hard_drive" required>
                   <option value="" disabled selected>Select Harddrive</option>
                   {% for harddrive in harddrives %}
                   <option value="{{harddrive.hard_drive}}">{{harddrive.hard_drive}}</option>
                   {% endfor %}
                </select>
-            </div>
-            <div class="input-field col s12">
-               <h5>Power Supply</h5>
-               <select id="power_supply" name="power_supply">
+				</div>
+				<div class="input-field col s12">
+					<h5>Power Supply</h5>
+					<select id="power_supply" name="power_supply" required>
                   <option value="" disabled selected>Select Power Supply</option>
                   {% for powersupply in powersupplies %}
                   <option value="{{powersupply.power_supply}}">{{powersupply.power_supply}}</option>
                   {% endfor %}
                </select>
-            </div>
-            <div class="input-field col s12">
-               <h5>Case</h5>
-               <select id="case" name="case">
+				</div>
+				<div class="input-field col s12">
+					<h5>Case</h5>
+					<select id="case" name="case" required>
                   <option value="" disabled selected>Select Case</option>
                   {% for case in cases %}
                   <option value="{{case.case}}">{{case.case}}</option>
                   {% endfor %}
                </select>
-            </div>
-         </div>
-         <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Add build
+				</div>
+			</div>
+			<!-- Button to submit the form and add data to database. -->
+			<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Add build
          <i class="material-icons right">add</i>
          </button>
-      </form>
-   </div>
+		</form>
+	</div>
 </div>
 {% endblock %}

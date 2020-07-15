@@ -2,18 +2,19 @@
 {% block title %}Seach by Motherboard{% endblock %}
 {% block searchmotherboard %}
 <div class="container">
-<div class="row">
-<h3>Search build by Motherboard</h3>
-<form action="{{url_for('search_build_by_motherboard')}}" method="POST">
-<div class="input-field col s12">
-   <select id="search_build_by_motherboard" type="search" placeholder="Search" name="search_build_by_motherboard">
+	<div class="row">
+		<h3>Search build by Motherboard</h3>
+		<form action="{{url_for('search_build_by_motherboard')}}" method="POST">
+			<div class="input-field col s12">
+				<select id="search_build_by_motherboard" type="search" placeholder="Search" name="search_build_by_motherboard" required>
       <option value="" disabled selected>Select Motherboard</option>
       {% for motherboard in motherboards %}
       <option value="{{motherboard.motherboard}}">{{motherboard.motherboard}}</option>
       {% endfor %}
    </select>
-   <button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
+				<button class="red darken-1 btn waves-effect waves-light" type="submit" name="action">Search
    <i class="material-icons right">search</i>
    </button>
-</div>
-{% endblock %}
+			</div>
+	</div>
+	{% endblock %}
