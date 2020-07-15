@@ -24,7 +24,7 @@
 ---
 # PCBuilder
 
-PCbuilder is a app where users can create their own PC builds by selecting components to share their ideas with the world
+PCbuilder is a app where users can create their own PC builds by selecting components to share their ideas with the world,
 And view all the builds created by others. Users are also able to edit and delete a build.
 
 ## UX
@@ -76,7 +76,7 @@ On the smaller screens the navbar gets collapsed and a burger icon is visable. A
 - User can use the dropdown menu in the navigation bar to select a component to search on. When selecting a component the user is taken to a search page where they then can select a part they want to search on. the user is then taken to a page which has the same layout as 'View all builds' displaying the builds that contain that part that the user has searched on.
 ---
 ### Feature ideas:
-There are some features that I want to implement but due to time wasn't able to do so. I might want to add these in the future
+There are some features that I want to implement, but due to time wasn't able to do so. I might want to add these in the future:
 
 #### Login function
 - Login functionality so users can view their own builds they have added. 
@@ -108,28 +108,38 @@ There are some features that I want to implement but due to time wasn't able to 
 ## Testing
 ### Manual Testing 
 
-All the test are executed on desktop as well as on mobile
+All the test are executed on desktop/laptop as well as on mobile devices/tablets. App is compatible with the following browsers: 
+- IE 
+- Edge
+- Firefox
+- Safari
+- Opera
+- Chrome
+- iOS
+- Android
 
 ### Home page
-When clicked on the PCBuilder logo the user is taken to the hopepage
+When clicked on the PCBuilder logo at the center of the navigation bar the user is taken to the homepage
 
 #### Slider
-Slider automatically goes through slides. User is able to navigate through the slides by clicking on the dots at the bottom center of the slider. 
+Slider automatically goes through slides. User is able to navigate through the slides by clicking on the dots at the bottom center of the slider. When user clicks on the view all builds button, it takes them to the All builds page. When user clicks on Add a build button it takes the user to the Add a build page.
 
 ### Navigation 
-All navigation links have been tested and each leads to their respective pages. User is able to navigate to previous and next page using the back and forward buttons
+All navigation links (main navigation bar, dropdown menu items, mobile side navigation and dropdown links in mobile side navigation) have been tested and each leads to their respective pages. User is able to navigate to previous and next page using the back and forward buttons.
 
 ### All Build
 User can see all the builds that have been added displayed as card. Initially Showing the name. When clicking on the expand icon, User is able to see the name of the components and the name of the parts.
 
 ### Edit a build
-User can click on the red Edit button to edit that build. It then redirects them to a form with pre-populated fields containing the values of the build they selected for editing. User can change the values and then save then. User then get redirected to the "View all builds" page. User is not able to submit a form with empty name or select fields.
+When clicking on the red 'Edit' button, the user gets redirects to a form with pre-populated fields containing the values of the build they selected for editing. User can change the values of the fields. User can submit these changes by clicking on the 'Edit Build' button. When trying to submit a change with a empty name field a popup appears at the name field saying that this field is required.
+When trying to submit a change when a option field is empty, the user is not able to submit the changes. 
 
 ### Delete a build
-User can click on the red delete button to delete a build. User is then redirected to the "view all builds page"
+User can click on the red delete button to delete a build. User is then redirected to the "view all builds page" and the build that has been deleted is now not visible on the all builds page anymore.
 
 ### Add Build
-When clicking on Add a build User is taken to a page with a form and is able to select from different parts and then use the add build button to add the build to the 'view all builds' page which the user gets redirected to when a build is added. User is not able to submit a form with empty name or select fields.
+When clicking on Add a build User is taken to a page with a form and is able to select from different parts and then use the 'add build' button to add the build to the 'view all builds' page which the user gets redirected to. User is now able to see the build that has been added.
+User is not able to submit a form when the name field is empty, and a pop-up appears at the name field telling the user that this field is required. User is not able to add a build when option form is empty.
 
 ### Debugger
 Throughout developing this project debug has been set to true for this app to display possible errors. 
